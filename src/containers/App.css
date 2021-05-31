@@ -1,0 +1,20 @@
+.App {
+  max-width: 1500px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h1,
+h3,
+h4 {
+  margin: 0;
+}
+
+.App-title {
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+}
