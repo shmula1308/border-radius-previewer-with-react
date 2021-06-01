@@ -1,0 +1,26 @@
+.DimensionInput {
+  display: block;
+  flex-basis: 65%;
+  justify-content: flex-end;
+  margin-bottom: 0.5em;
+}
+
+.DimensionInput .container {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.DimensionInput label {
+  margin-right: 1em;
+}
+
+.DimensionInput input {
+  border: 0;
+  width: 60px;
+  font-size: 1rem;
+  padding: 0.5em 0 0.5em 0.4em;
+  font-family: inherit;
+  border-radius: 3px;
+  background-color: #d3e0ea;
+}

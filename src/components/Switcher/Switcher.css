@@ -1,0 +1,39 @@
+.Switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  /* margin-left: 1.8em; */
+  margin-bottom: 0.5em;
+}
+
+.Switcher .label {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.Switcher .btn {
+  position: relative;
+  flex-basis: 20%;
+  padding: 0.9em;
+  font-family: inherit;
+  border: none;
+  border-radius: 50px;
+  background-color: #d3e0ea;
+  cursor: pointer;
+}
+
+.Switcher .toggle {
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background-color: #276678;
+  transform: translate(-100%, -50%);
+  border-radius: 50%;
+  transition: transform 0.2s ease-in;
+}
+
+.Switcher .toggle-active {
+  transform: translate(0%, -50%);
+}
