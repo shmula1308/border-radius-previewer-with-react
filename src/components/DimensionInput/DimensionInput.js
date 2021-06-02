@@ -1,16 +1,16 @@
 import './DimensionInput.css'
 
-const dimensionInput = () => {
+const dimensionInput = (props) => {
     return (
         <div className="DimensionInput">
             <div className="container">
-                <label htmlFor="width">Width</label>
+                <label htmlFor="width">{props.label}</label>
                 <input 
                     type="number" 
                     id="width" 
                     value="500" 
                     min="1" 
-                    max="500" />
+                    max="500"readOnly />
             </div>
         </div>
 

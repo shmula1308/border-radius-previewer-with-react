@@ -1,8 +1,7 @@
 .CustomControls {
   display: flex;
-  max-width: 660px;
+  max-width: 680px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  /* background-color: brown; */
 }

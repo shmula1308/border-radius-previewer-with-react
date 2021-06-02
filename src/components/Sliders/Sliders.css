@@ -1,0 +1,50 @@
+.Slider {
+  max-width: 650px;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.Slider .label {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+.Slider .rangeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 85%;
+  height: 10px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 10px 1px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.Slider .rangeInput:hover {
+  background-color: #d3e0ea;
+}
+
+.Slider .rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #276678;
+  border-radius: 28% 72% 82% 18% / 47% 59% 41% 53%;
+  transition: background-color 0.2s ease-in-out;
+  cursor: grab;
+}
+
+.Slider .rangeInput::-webkit-slider-thumb:hover {
+  background-color: #3a98b3;
+}
+
+.TwoPointControl {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.TwoPointControl .slider-container {
+  flex-basis: 45%;
+}

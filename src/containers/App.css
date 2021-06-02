@@ -1,11 +1,7 @@
 .App {
   max-width: 1500px;
   width: 90%;
-  margin: 0 auto;
-  margin-top: 3em;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end; */
+  margin: 2em auto 4em auto;
 }
 
 h1,
