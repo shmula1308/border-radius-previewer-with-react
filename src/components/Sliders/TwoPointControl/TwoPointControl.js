@@ -10,7 +10,7 @@ const twoPointControl = (props) => {
                     type="range"
                     min="0"
                     max="100"
-                    value={props.value}
+                    value={props.pointOne}
                     onChange={props.change}
                     className="rangeInput"
                     
@@ -23,7 +23,7 @@ const twoPointControl = (props) => {
                     type="range"
                     min="0"
                     max="100"
-                    value={props.value}
+                    value={props.pointTwo}
                     onChange={props.change}
                     className="rangeInput"
                 />

@@ -9,7 +9,7 @@ const onePointControl = (props) => {
             type="range"
             min="0"
             max="100"
-            value={props.value}
+            value={props.pointOne}
             onChange={props.change}
             className="rangeInput"
             step='1'

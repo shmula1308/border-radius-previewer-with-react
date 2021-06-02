@@ -11,7 +11,18 @@ class App extends Component {
   state = {
     customSize: false,
     fullControl: false,
-    topLeft: 0
+    topLeft: 0,
+    topRight: 0,
+    bottomRight: 0,
+    bottomLeft: 0,
+    topLeftHor: 0,
+    topLeftVer: 0,
+    topRightHor: 0,
+    topRightVer: 0,
+    bottomRightHor: 0,
+    bottomRightVer: 0,
+    bottomLeftHor: 0,
+    bottomLeftVer: 0
   }
 
   switchHandler = (ev) => {
@@ -26,20 +37,68 @@ class App extends Component {
 
   inputChangeHandler = (ev) => {
     if(ev.target.id === 'Top Left') {
-      console.log(ev.target.value)
       this.setState({topLeft: ev.target.value})
+    }
+    if(ev.target.id === 'Top Right') {
+      this.setState({topRight: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Right') {
+      this.setState({bottomRight: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Left') {
+      this.setState({bottomLeft: ev.target.value})
+    }
+
+    if(ev.target.id === 'Top Left Horizontal') {
+      this.setState({topLeftHor: ev.target.value})
+    }
+    if(ev.target.id === 'Top Left Vertical') {
+      this.setState({topLeftVer: ev.target.value})
+    }
+    if(ev.target.id === 'Top Right Horizontal') {
+      this.setState({topRightHor: ev.target.value})
+    }
+    if(ev.target.id === 'Top Right Vertical') {
+      this.setState({topRightVer: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Right Horizontal') {
+      this.setState({bottomRightHor: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Right Vertical') {
+      this.setState({bottomRightVer: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Left Horizontal') {
+      this.setState({bottomLeftHor: ev.target.value})
+    }
+    if(ev.target.id === 'Bottom Left Vertical') {
+      this.setState({bottomLeftVer: ev.target.value})
     }
   }
 
   render() {
     
-    const labels = ['Top Left', "Top Right", "Bottom Right", "Bottom Left"]
+
     let  sliders = null;
     if(!this.state.fullControl) {
-      sliders =  labels.map((label,index) => (<OnePointControl key={index} label={label} change={this.inputChangeHandler} value={this.state.sliderValue}/>))
+      sliders = (
+        <React.Fragment>
+          <OnePointControl  label='Top Left' change={this.inputChangeHandler} pointOne={this.state.topLeft}/>
+          <OnePointControl  label='Top Right' change={this.inputChangeHandler} pointOne={this.state.topRight}/>
+          <OnePointControl  label='Bottom Right' change={this.inputChangeHandler} pointOne={this.state.bottomRight}/>
+          <OnePointControl  label='Bottom Left' change={this.inputChangeHandler} pointOne={this.state.bottomLeft}/>
+        </React.Fragment>
+      )
     } else {
-      sliders =  labels.map((label,index) => (<TwoPointControl key={index} label={label} change={this.inputChangeHandler} value={this.state.sliderValue}/>))
+      sliders = (
+        <React.Fragment>
+            <TwoPointControl  label='Top Left' change={this.inputChangeHandler} pointOne={this.state.topLeftHor} pointTwo={this.state.topLeftVer}/>
+            <TwoPointControl  label='Top Right' change={this.inputChangeHandler} pointOne={this.state.topRightHor} pointTwo={this.state.topRightVer}/>
+            <TwoPointControl  label='Bottom Right' change={this.inputChangeHandler} pointOne={this.state.bottomRightHor} pointTwo={this.state.bottomRightVer}/>
+            <TwoPointControl  label='Bottom Left' change={this.inputChangeHandler} pointOne={this.state.bottomLeftHor} pointTwo={this.state.bottomLeftVer}/>
+        </React.Fragment>
+      )
     }
+
     return (
     <div className="App">
       <h1 className="App-title">Border radius previewer</h1>
