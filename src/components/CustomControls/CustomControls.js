@@ -10,8 +10,8 @@ const customControls = (props) => {
                 <Switcher label="Full Control:" click={props.click} id="FullControl" toggle={props.fullControlToggle}/>
             </div>
             <div style={{display: `${props.display}`, alignSelf:'flex-start'}}>
-                <DimensionInput label="Width"/>
-                <DimensionInput label="Height"/>
+                <DimensionInput label="Width" value={props.width} change={props.change}/>
+                <DimensionInput label="Height" value={props.height} change={props.change}/>
             </div>
         </div>
     )

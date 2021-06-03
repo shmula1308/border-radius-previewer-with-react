@@ -4,13 +4,15 @@ const dimensionInput = (props) => {
     return (
         <div className="DimensionInput">
             <div className="container">
-                <label htmlFor="width">{props.label}</label>
+                <label htmlFor={props.label}>{props.label}</label>
                 <input 
                     type="number" 
-                    id="width" 
-                    value="500" 
+                    id={props.label} 
+                    value={props.value} 
                     min="1" 
-                    max="500"readOnly />
+                    max="500"
+                    onChange={props.change}
+                />
             </div>
         </div>
 

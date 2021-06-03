@@ -22,7 +22,9 @@ class App extends Component {
     bottomRightHor: 0,
     bottomRightVer: 0,
     bottomLeftHor: 0,
-    bottomLeftVer: 0
+    bottomLeftVer: 0,
+    width: 500,
+    height: 500
   }
 
   switchHandler = (ev) => {
@@ -31,7 +33,21 @@ class App extends Component {
       this.setState({customSize: !showCustomInputs})
     } else {
       const showFullControl =  this.state.fullControl;
-      this.setState({fullControl: !showFullControl})
+      this.setState({
+        fullControl: !showFullControl,
+        topLeft: 0,
+        topRight: 0,
+        bottomRight: 0,
+        bottomLeft: 0,
+        topLeftHor: 0,
+        topLeftVer: 0,
+        topRightHor: 0,
+        topRightVer: 0,
+        bottomRightHor: 0,
+        bottomRightVer: 0,
+        bottomLeftHor: 0,
+        bottomLeftVer: 0
+      })
     }
   }
 
@@ -75,9 +91,16 @@ class App extends Component {
     }
   }
 
+  dimensionsHandler = (ev) => {
+    if(ev.target.id === 'Width') {
+      this.setState({width: ev.target.value})
+    } else {
+      this.setState({height: ev.target.value})
+    }
+  }
+
   render() {
     
-
     let  sliders = null;
     if(!this.state.fullControl) {
       sliders = (
@@ -102,10 +125,48 @@ class App extends Component {
     return (
     <div className="App">
       <h1 className="App-title">Border radius previewer</h1>
-      <Shape/>
-      <BorderRadius/>
-      <CustomControls click={this.switchHandler} display={this.state.customSize ? 'flex' : 'none'} customSizeToggle={this.state.customSize} fullControlToggle={this.state.fullControl}/>
-      {sliders}
+      <Shape 
+        fullControl={this.state.fullControl}
+        tL={this.state.topLeft} 
+        tR={this.state.topRight} 
+        bR={this.state.bottomRight} 
+        bL={this.state.bottomLeft} 
+        tLH={this.state.topLeftHor} 
+        tLV={this.state.topLeftVer} 
+        tRH={this.state.topRightHor}
+        tRV={this.state.topRightVer}
+        bRH={this.state.bottomRightHor}
+        bRV={this.state.bottomRightVer}
+        bLH={this.state.bottomLeftHor}
+        bLV={this.state.bottomLeftVer}
+        width={this.state.width}
+        height={this.state.height}
+        />
+      <BorderRadius 
+        fullControl={this.state.fullControl}
+        tL={this.state.topLeft} 
+        tR={this.state.topRight} 
+        bR={this.state.bottomRight} 
+        bL={this.state.bottomLeft} 
+        tLH={this.state.topLeftHor} 
+        tLV={this.state.topLeftVer} 
+        tRH={this.state.topRightHor}
+        tRV={this.state.topRightVer}
+        bRH={this.state.bottomRightHor}
+        bRV={this.state.bottomRightVer}
+        bLH={this.state.bottomLeftHor}
+        bLV={this.state.bottomLeftVer}
+      />
+      <CustomControls 
+        click={this.switchHandler} 
+        display={this.state.customSize ? 'flex' : 'none'} 
+        customSizeToggle={this.state.customSize} 
+        fullControlToggle={this.state.fullControl}
+        width={this.state.width}
+        height={this.state.height}
+        change={this.dimensionsHandler}
+      />
+        {sliders}
     </div>
    );
   }

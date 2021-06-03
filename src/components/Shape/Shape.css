@@ -1,9 +1,15 @@
+.Shape {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
 .Shape .result {
   margin: 0 auto;
   width: 500px;
   height: 500px;
   background-color: #1687a7;
   margin-top: 3em;
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
   outline: 2px dotted #59beda;
 }

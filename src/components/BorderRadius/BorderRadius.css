@@ -33,6 +33,7 @@
   color: cornsilk;
   border-radius: 0 4px 4px 0;
   transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .btn:hover {
