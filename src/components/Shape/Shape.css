@@ -13,3 +13,27 @@
   margin-top: 3em;
   outline: 2px dotted #59beda;
 }
+
+.alert {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 300px;
+  height: 120px;
+  border-radius: 5px;
+  background-color: #d0d0d6;
+  font-size: 1.3rem;
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.fa-hands-wash {
+  margin-left: 15px;
+  color: crimson;
+}

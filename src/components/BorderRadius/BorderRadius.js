@@ -14,9 +14,10 @@ const borderRadius = (props) => {
             <div className="css-value">
               {borderRadius}
             </div>
-            <button type="button" className="btn">Copy</button>
+            <button type="button" className="btn" onClick={(ev)=>props.click(ev,borderRadius)}>Copy</button>
         </div>
     )
 }
+
 
 export default borderRadius;

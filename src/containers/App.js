@@ -5,6 +5,7 @@ import BorderRadius from '../components/BorderRadius/BorderRadius'
 import CustomControls from '../components/CustomControls/CustomControls'
 import OnePointControl from '../components/Sliders/OnePointControl/OnePointControl'
 import TwoPointControl from '../components/Sliders/TwoPointControl/TwoPointControl'
+import WithClass from '../hoc/WithClass'
 
 class App extends Component {
   
@@ -24,7 +25,8 @@ class App extends Component {
     bottomLeftHor: 0,
     bottomLeftVer: 0,
     width: 500,
-    height: 500
+    height: 500,
+    alert: false
   }
 
   switchHandler = (ev) => {
@@ -53,7 +55,9 @@ class App extends Component {
 
   inputChangeHandler = (ev) => {
     if(ev.target.id === 'Top Left') {
-      this.setState({topLeft: ev.target.value})
+      let newTopLeft = this.state.topLeft;
+      newTopLeft = ev.target.value;
+      this.setState({topLeft: newTopLeft})
     }
     if(ev.target.id === 'Top Right') {
       this.setState({topRight: ev.target.value})
@@ -99,6 +103,22 @@ class App extends Component {
     }
   }
 
+  displayAlert = () => {
+    let alert = this.state.alert;
+    this.setState({alert: !alert})
+    setTimeout(() => {
+      let alert = this.state.alert;
+      this.setState({alert: !alert})
+    },2000)
+  }
+
+  copyToClipboardHandler = (_,borderRadius) => {
+    navigator.clipboard.writeText(borderRadius);
+    this.displayAlert()
+  }
+
+  
+
   render() {
     
     let  sliders = null;
@@ -123,7 +143,7 @@ class App extends Component {
     }
 
     return (
-    <div className="App">
+    <WithClass classes="App">
       <h1 className="App-title">Border radius previewer</h1>
       <Shape 
         fullControl={this.state.fullControl}
@@ -141,6 +161,7 @@ class App extends Component {
         bLV={this.state.bottomLeftVer}
         width={this.state.width}
         height={this.state.height}
+        alert={this.state.alert}
         />
       <BorderRadius 
         fullControl={this.state.fullControl}
@@ -156,6 +177,7 @@ class App extends Component {
         bRV={this.state.bottomRightVer}
         bLH={this.state.bottomLeftHor}
         bLV={this.state.bottomLeftVer}
+        click={this.copyToClipboardHandler}
       />
       <CustomControls 
         click={this.switchHandler} 
@@ -167,7 +189,7 @@ class App extends Component {
         change={this.dimensionsHandler}
       />
         {sliders}
-    </div>
+    </WithClass>
    );
   }
   
