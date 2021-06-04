@@ -28,7 +28,7 @@ const shape = (props) => {
             <div className="Shape">
                 <div className="result" style={css}></div>   
             </div>
-            <div className={cssClasses.join(" ")}>Copied to clipboard <i class="fas fa-hands-wash"></i></div>
+            <div className={cssClasses.join(" ")}>Copied to clipboard <i className="fas fa-hands-wash"></i></div>
         </React.Fragment>
     )
 }

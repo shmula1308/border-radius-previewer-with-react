@@ -114,13 +114,14 @@ class App extends Component {
 
   copyToClipboardHandler = (_,borderRadius) => {
     navigator.clipboard.writeText(borderRadius);
-    this.displayAlert()
+    if(this.state.alert) {
+      return;
+    } else {
+      this.displayAlert()
+    }
   }
 
-  
-
   render() {
-    
     let  sliders = null;
     if(!this.state.fullControl) {
       sliders = (
