@@ -55,43 +55,76 @@ class App extends Component {
 
   inputChangeHandler = (ev) => {
     if(ev.target.id === 'Top Left') {
-      let newTopLeft = this.state.topLeft;
-      newTopLeft = ev.target.value;
-      this.setState({topLeft: newTopLeft})
-    }
+      this.setState((prevState,props) => {
+        let newTopLeft = prevState.topLeft;
+        newTopLeft = parseInt(ev.target.value);
+        return {
+          topLeft: newTopLeft
+        }
+      })
+      
+  }
     if(ev.target.id === 'Top Right') {
-      this.setState({topRight: ev.target.value})
+      this.setState((prevState,props) => {
+        let newTopRight = prevState.topRight;
+        newTopRight = parseInt(ev.target.value);
+        return {
+          topRight: newTopRight
+        }
+      })
     }
+
     if(ev.target.id === 'Bottom Right') {
-      this.setState({bottomRight: ev.target.value})
+      let newBottomRight = this.state.bottomRight;
+      newBottomRight = ev.target.value;
+      this.setState({bottomRight: newBottomRight})
     }
+    
     if(ev.target.id === 'Bottom Left') {
-      this.setState({bottomLeft: ev.target.value})
+      let newBottomLeft = this.state.bottomLeft;
+      newBottomLeft = ev.target.value;
+      this.setState({bottomLeft: newBottomLeft})
     }
 
     if(ev.target.id === 'Top Left Horizontal') {
-      this.setState({topLeftHor: ev.target.value})
+      let newTopLeftHor = this.state.topLeftHor;
+      newTopLeftHor = ev.target.value;
+      this.setState({topLeftHor: newTopLeftHor})
     }
     if(ev.target.id === 'Top Left Vertical') {
-      this.setState({topLeftVer: ev.target.value})
+      let newTopLeftVer = this.state.topLeftVer;
+      newTopLeftVer = ev.target.value;
+      this.setState({topLeftVer: newTopLeftVer})
     }
     if(ev.target.id === 'Top Right Horizontal') {
-      this.setState({topRightHor: ev.target.value})
+      let newTopRightHor = this.state.topRightHor;
+      newTopRightHor = ev.target.value;
+      this.setState({topRightHor: newTopRightHor})
     }
     if(ev.target.id === 'Top Right Vertical') {
-      this.setState({topRightVer: ev.target.value})
+      let newTopRightVer = this.state.topRightVer;
+      newTopRightVer = ev.target.value;
+      this.setState({topRightVer: newTopRightVer})
     }
     if(ev.target.id === 'Bottom Right Horizontal') {
-      this.setState({bottomRightHor: ev.target.value})
+      let newBottomRightHor = this.state.bottomRightHor;
+      newBottomRightHor = ev.target.value;
+      this.setState({bottomRightHor: newBottomRightHor})
     }
     if(ev.target.id === 'Bottom Right Vertical') {
-      this.setState({bottomRightVer: ev.target.value})
+      let newBottomRightVer = this.state.bottomRightVer;
+      newBottomRightVer = ev.target.value;
+      this.setState({bottomRightVer: newBottomRightVer})
     }
     if(ev.target.id === 'Bottom Left Horizontal') {
-      this.setState({bottomLeftHor: ev.target.value})
+      let newBottomLeftHor = this.state.bottomRightHor;
+      newBottomLeftHor = ev.target.value;
+      this.setState({bottomLeftHor: newBottomLeftHor})
     }
     if(ev.target.id === 'Bottom Left Vertical') {
-      this.setState({bottomLeftVer: ev.target.value})
+      let newBottomLeftVer = this.state.bottomLeftVer;
+      newBottomLeftVer = ev.target.value;
+      this.setState({bottomLeftVer: newBottomLeftVer})
     }
   }
 
